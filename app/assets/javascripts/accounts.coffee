@@ -7,7 +7,6 @@ jQuery ->
     entity = $("#account_entity :selected").text()
     options = $(account_names).filter("optgroup[label='#{entity}']")
     if options
-      $("#account_account_name").remove( "optgroup[label='#{entity}']")
       $("#account_account_name").html(options)
     else
       $("#account_account_name").empty()
