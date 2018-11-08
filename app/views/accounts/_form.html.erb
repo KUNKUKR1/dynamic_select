@@ -1,0 +1,34 @@
+<%= form_with(model: account, local: true) do |form| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :account_no %>
+    <%= form.text_field :account_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entity %>
+    <%= form.collection_select :entity, Account.order(:entity).select('distinct entity').uniq, :entity,  :entity, include_blank:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :account_name %>
+    <%= form.grouped_collection_select :account_name, Account.order(:entity), :account_names, :entity, :account_name ,:account_name, include_blank:true %>
+
+    <%#= form.text_field :account_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
