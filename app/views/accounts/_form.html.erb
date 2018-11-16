@@ -28,7 +28,36 @@
     <%#= form.text_field :account_name %>
   </div>
 
+  <div class="field">
+    <%= form.label :account_branch %>
+    <%= form.grouped_collection_select :account_branch, Account.order(:account_name), :account_branches, :account_name, :account_branch ,:account_branch, include_blank:true %>
+
+    <%#= form.text_field :account_name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

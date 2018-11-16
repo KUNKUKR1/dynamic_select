@@ -10,3 +10,14 @@ jQuery ->
       $("#account_account_name").html(options)
     else
       $("#account_account_name").empty()
+
+
+jQuery ->
+  account_names = $("#account_account_branch").html()
+  $("#account_account_name").change ->
+    entity = $("#account_account_name :selected").text()
+    options = $(account_names).filter("optgroup[label='#{entity}']")
+    if options
+      $("#account_account_branch").html(options)
+    else
+      $("#account_account_branch").empty()

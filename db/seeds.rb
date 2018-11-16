@@ -38,19 +38,27 @@
 #                {account_no: 24, entity: "Six", account_name: "4 belongs sixth entity"}]
 # )
 
-AccountHistory.create([{name: "this is one", account_id: 1},
-                       {name: "this is 2", account_id: 2},
-                       {name: "this is o2ne", account_id: 3},
-                       {name: "this is on3e", account_id: 4},
-                       {name: "this is on2e", account_id: 5},
-                       {name: "this is o2ne", account_id: 6},
-                       {name: "this is o23ne", account_id: 7},
-                       {name: "this is on3e", account_id: 2},
-                       {name: "this is oneasd", account_id: 9},
-                       {name: "this is onde", account_id: 1},
-                       {name: "this is oneasd", account_id: 11},
-                       {name: "this is onde", account_id: 12},
-                       {name: "this is onea3sd", account_id: 13},
-                       {name: "this is one2", account_id: 14},
-                       {name: "this is onsse2", account_id: 14}
-                      ])
+
+
+Account.where(account_name: ["1 belongs one entity", "1 belongs two entity", "1 belongs thrird entity", "1 belongs fourth entity", "1 belongs fifth entity", "1 belongs sixth entity"])
+update_all({account_branch: "Hyderabad"})
+#
+#
+#
+# create([{
+# AccountHistory.create([{name: "this is one", account_id: 1},
+#                        {name: "this is 2", account_id: 2},
+#                        {name: "this is o2ne", account_id: 3},
+#                        {name: "this is on3e", account_id: 4},
+#                        {name: "this is on2e", account_id: 5},
+#                        {name: "this is o2ne", account_id: 6},
+#                        {name: "this is o23ne", account_id: 7},
+#                        {name: "this is on3e", account_id: 2},
+#                        {name: "this is oneasd", account_id: 9},
+#                        {name: "this is onde", account_id: 1},
+#                        {name: "this is oneasd", account_id: 11},
+#                        {name: "this is onde", account_id: 12},
+#                        {name: "this is onea3sd", account_id: 13},
+#                        {name: "this is one2", account_id: 14},
+#                        {name: "this is onsse2", account_id: 14}
+#                       ])
